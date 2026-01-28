@@ -1,0 +1,37 @@
+Postgres10,,,
+customer_id,customer_name,city,currency
+789101,Costco Wholesale,"New Jersey, US",USD
+789102,Vijay Stores,"Dallas,US",USD
+789103,Vijay Stores,"Dallas,US",USD
+789121,Coolblue,"Dallas,US",USD
+789122,Coolblue,"Dallas,US",USD
+789201,Rel Fresh,"New Jersey, US",USD
+789202,Rel Fresh,"Dallas,US",USD
+789203,Rel Fresh,"Dallas,US",USD
+789220,ShopRite,"New Jersey, US",USD
+789221,Atlas Stores,"Dallas,US",USD
+789301,Foodtown,"New Jersey, US",USD
+789303,Expression Stores,"Dallas,US",USD
+789320,Whole Foods Market,"New Jersey, US",USD
+789321,Chiptec Stores,"Dallas,US",USD
+789401,Wegmans,"New Jersey, US",USD
+789402,Propel Mart,"Dallas,US",USD
+789403,Propel Mart,"Dallas,US",USD
+789420,Lidl,"New Jersey, US",USD
+789421,Lotus Mart,"Dallas,US",USD
+789422,Lotus Mart,"Dallas,US",USD
+789501,Best Market,"New Jersey, US",USD
+789503,Viveks Stores,"Dallas,US",USD
+789520,Fairway Market,"New Jersey, US",USD
+789521,Acclaimed Stores,"Dallas,US",USD
+789522,Acclaimed Stores,"Dallas,US",USD
+789601,Price Rite,"New Jersey, US",USD
+789603,Info Stores,"Dallas,US",USD
+789621,Expert Mart,"Dallas,US",USD
+789622,Expert Mart,"Dallas,US",USD
+789702,Sorefoz Mart,"Dallas,US",USD
+789703,Sorefoz Mart,"Dallas,US",USD
+789720,Colonial Farms,"New Jersey, US",USD
+789721,Logic Stores,"Dallas,US",USD
+789902,Elite Mart,"Dallas,US",USD
+789903,Elite Mart,"Dallas,US",USD

@@ -1,0 +1,20 @@
+Postgres3,,,,
+product_name,product_id,category,price_Dallas,price_New_jersey
+AM Milk 500,25891101,Dairy,3,4
+AM Milk 250,25891102,Dairy,2.39,2.99
+AM Milk 100,25891103,Dairy,1.99,2.35
+AM Butter 100,25891201,Dairy,3.2,3.79
+AM Butter 250,25891202,Dairy,4,4.5
+AM Butter 500,25891203,Dairy,8,8.5
+AM Cheese 250,25891301,Dairy,7,7.5
+AM Cheese 150,25891302,Dairy,5,6
+AM Cheese 100,25891303,Dairy,3,3
+AM Curd 250,25891401,Dairy,8.99,9.99
+AM Curd 100,25891402,Dairy,6,6
+AM Curd 50,25891403,Dairy,4,5
+AM Biscuits 750,25891501,Food,7,8
+AM Biscuits 500,25891502,Food,4,5
+AM Biscuits 250,25891503,Food,2,3
+AM Tea 500,25891601,beverages,7,8
+AM Tea 250,25891602,beverages,3,4
+AM Tea 100,25891603,beverages,2,3
