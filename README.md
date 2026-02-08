@@ -4,6 +4,8 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat&logo=n8n&logoColor=white)
 ![Quadratic](https://img.shields.io/badge/Quadratic-Analytics-blue)
+![SQL](https://img.shields.io/badge/SQL-Advanced-orange)
+![ETL](https://img.shields.io/badge/ETL-Automated-green)
 
 > **Automated data ingestion to eliminate 15+ hours/week of manual reporting while identifying $111K in revenue leakage**
 
@@ -90,14 +92,18 @@ This project simulates a real-world analytics engagement for a rapidly growing f
 - **Current Performance:** 48.6% (Target: >65%)
 - **Business Impact:** Primary measure of fulfillment excellence; below 50% indicates systemic issues
 
-```sql
--- Simplified OTIF Calculation
+-- Calculate OTIF rate for last 30 days
 SELECT 
+    COUNT(*) as total_orders,
+    COUNT(CASE WHEN on_time_flag = 1 AND in_full_flag = 1 THEN 1 END) as otif_orders,
     ROUND(
-        100.0 * SUM(CASE WHEN on_time_flag = 1 AND in_full_flag = 1 THEN 1 ELSE 0 END) 
+        100.0 * COUNT(CASE WHEN on_time_flag = 1 AND in_full_flag = 1 THEN 1 END) 
         / COUNT(*), 
     2) AS otif_rate
-FROM fact_orders;
+FROM fact_orders
+WHERE order_date >= CURRENT_DATE - INTERVAL '30 days';
+
+-- See full query logic: sql/kpi_calculations.sql
 ```
 
 ### 2. **Volume Fill Rate vs. In-Full Rate**
@@ -259,6 +265,26 @@ supply-chain-analytics/
 ```
 
 ---
+## 🔄 Automated Workflow
+
+The n8n workflow automates the entire data pipeline from ingestion to database loading:
+
+**Screenshot:**
+
+<img src="images/workflow (1).png" width="900">
+
+**Workflow Steps:**
+1. Monitor Google Drive folder for new Excel files
+2. Download files when detected
+3. Extract CSV data from Excel sheets
+4. Validate data quality
+5. Load into PostgreSQL staging tables
+6. Execute transformation queries
+7. Send completion notification
+
+[View Complete Workflow JSON](n8n workflow automation/My workflow 4 (1).json)
+
+---
 
 ## 🚀 Strategic Recommendations & 90-Day Roadmap
 
@@ -335,6 +361,9 @@ The PostgreSQL database implements a star schema with:
 
 - **[Architecture Documentation](documents/architecture.md)**: Detailed system design and data flow
 - **[KPI Methodology](documents/kpi_methodology.md)**: Complete calculation logic for all metrics
+- **[KPI Queries](sql/kpi_calculations.sql)**: SQL code for all dashboard metrics
+- **[n8n Workflow](n8n workflow automation/My workflow 4 (1).json)**: Complete automation workflow configuration
+```
 
 ---
 
