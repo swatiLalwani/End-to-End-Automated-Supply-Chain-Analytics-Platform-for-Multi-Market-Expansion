@@ -322,9 +322,9 @@ The PostgreSQL database implements a star schema with:
 
 ## 📚 Additional Documentation
 
-- **[Architecture Documentation](./docs/architecture.md)**: Detailed system design and data flow
-- **[KPI Methodology](./docs/kpi_methodology.md)**: Complete calculation logic for all metrics
-- **[Data Dictionary](./docs/data_dictionary.md)**: Field definitions and business rules
+- **[Architecture Documentation](documents/architecture.md)**: Detailed system design and data flow
+- **[KPI Methodology](documents/kpi_methodology.md)**: Complete calculation logic for all metrics
+- **[Data Dictionary](documents/Date Table - Data Dictionary.csv)**: Field definitions and business rules
 
 ---
 
