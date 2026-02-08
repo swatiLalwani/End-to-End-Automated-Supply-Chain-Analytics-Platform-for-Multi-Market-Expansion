@@ -80,8 +80,10 @@ This project simulates a real-world analytics engagement for a rapidly growing f
 |------|---------|----------------|
 | **n8n** | Workflow automation | No-code ETL pipeline with built-in scheduling and error handling |
 | **PostgreSQL** | Database & data modeling | Robust relational database for complex KPI calculations and historical tracking |
-| **Quadratic** | Analytics & dashboards | Python-enabled spreadsheet with interactive visualizations |
+| **Python** | Advanced analytics | Custom scripts for complex calculations, data transformations, and business logic |
+| **Quadratic** | Analytics & dashboards | Python-enabled spreadsheet with interactive visualizations and live database connections |
 | **Google Drive** | Data source | Centralized storage for operational Excel files |
+```
 
 ---
 
@@ -235,35 +237,52 @@ Revenue analysis and customer lifetime value metrics.
 ```
 supply-chain-analytics/
 ├── README.md                          # This file
-├── data/
-│   ├── Date_Table_-_dim_customers.csv
-│   ├── Date_Table_-_dim_date.csv
-│   └── Date_Table_-_dim_products.csv
-│   └── Date_Table_-_dim_target_orders.csv
-│   └── Date_Table_-_fact_order_online.csv
-│   └── Date_Table_-_fact_orders_aggregated.csv
-│   └── Date_Table_-_fact_summary.csv
-├── sql/
+├── datasets/                          # Source data files
+│   ├── dim_customers.csv
+│   ├── dim_date.csv
+│   ├── dim_products.csv
+│   ├── dim_target_orders.csv
+│   ├── fact_order_online.csv
+│   ├── fact_orders_aggregate.csv
+│   └── fact_summary.csv
+├── sql/                               # Database queries
 │   ├── 01_schema_setup.sql           # Database schema creation
 │   ├── 02_kpi_calculations.sql       # Core KPI queries
 │   ├── 03_category_analysis.sql      # Category performance queries
 │   └── 04_trend_analysis.sql         # Time-based trend queries
-├── n8n/
+├── scripts/                           # Python analytics scripts
+│   ├── Category_Summary.py           # Category-level performance metrics
+│   ├── Customer_Activity.py          # Customer ordering patterns
+│   ├── Customer_LTV2.py              # Customer lifetime value analysis
+│   ├── Customer_OTIF_Discrepancy.py  # Customer performance gaps
+│   ├── Daily_Operations_Summary.py   # Daily operational KPIs
+│   ├── Exec_Performance_Overview.py  # Executive summary metrics
+│   ├── Executive_KPI_Table.py        # High-level KPI calculations
+│   ├── KPI_Summary_supply_chain.py   # Supply chain KPI aggregation
+│   ├── Late_Delivery_Analysis.py     # Delivery delay root cause analysis
+│   ├── Monthly_Performance.py        # Month-over-month trend analysis
+│   ├── Product_Performance.py        # Product-level analytics
+│   ├── Revenue_Loss_Chart.py         # Revenue leakage visualization
+│   ├── Revenue_Summary.py            # Revenue breakdown by category
+│   └── Weekday_Performance.py        # Day-of-week performance patterns
+├── n8n/                               # Workflow automation
 │   └── My_workflow_4__1_.json        # Complete n8n workflow configuration
-├── docs/
+├── documents/                         # Documentation
 │   ├── architecture.md               # Detailed architecture documentation
 │   ├── kpi_methodology.md            # KPI calculation details
-│   └── data_dictionary.md            # Field definitions and sources
-└── images/
-    ├── Executive_dashboard.png
-    ├── supplychain_dashboard.png
-    ├── product_dashboard.png
-    ├── Operations_Dashboard.png
-    ├── finance_dashboard.png
-    ├── workflow.png
-    └── Architecture_diagram.png
+│   ├── Data_Dictionary.csv           # Field definitions and sources
+│   ├── Executive_Summary.csv         # Executive summary table
+│   └── Impact_Summary.csv            # Business impact metrics
+├── dashboards/                        # Dashboard screenshots
+│   ├── Executive_dashboard.png
+│   ├── supplychain_dashboard.png
+│   ├── product_dashboard.png
+│   ├── Operations_Dashboard.png
+│   └── finance_dashboard.png
+└── images/                            # Architecture diagrams
+    ├── Architecture_diagram.png
+    └── workflow.png
 ```
-
 ---
 ## 🔄 Automated Workflow
 
@@ -357,6 +376,62 @@ The PostgreSQL database implements a star schema with:
 
 ---
 
+---
+
+## 🐍 Python Analytics Scripts
+
+The project includes **14 custom Python scripts** that power advanced analytics and visualization in the Quadratic dashboards. These scripts connect directly to PostgreSQL to perform real-time calculations and generate executive insights.
+
+### Core Libraries Used
+- **pandas**: Data manipulation and aggregation
+- **psycopg2**: PostgreSQL database connectivity
+- **numpy**: Numerical computations
+- **datetime**: Time-based calculations
+
+### Script Categories
+
+#### 📊 Executive Analytics
+| Script | Purpose | Key Metrics |
+|--------|---------|-------------|
+| **Executive_KPI_Table.py** | High-level dashboard KPIs | OTIF, revenue, order volume |
+| **Exec_Performance_Overview.py** | Executive summary metrics | Monthly trends, category breakdown |
+| **Monthly_Performance.py** | Month-over-month analysis | Growth rates, performance trends |
+
+#### 🚚 Supply Chain Analytics
+| Script | Purpose | Key Metrics |
+|--------|---------|-------------|
+| **KPI_Summary_supply_chain.py** | Supply chain KPI aggregation | Fill rates, delivery performance |
+| **Late_Delivery_Analysis.py** | Root cause analysis of delays | Delay frequency, patterns, carriers |
+| **Daily_Operations_Summary.py** | Daily operational insights | Order volume, peak times, throughput |
+| **Weekday_Performance.py** | Day-of-week patterns | Weekday vs weekend analysis |
+
+#### 💰 Revenue & Financial Analytics
+| Script | Purpose | Key Metrics |
+|--------|---------|-------------|
+| **Revenue_Summary.py** | Revenue breakdown by category | Category revenue share, trends |
+| **Revenue_Loss_Chart.py** | Revenue leakage visualization | Shortfall by product/category |
+
+#### 👥 Customer Analytics
+| Script | Purpose | Key Metrics |
+|--------|---------|-------------|
+| **Customer_Activity.py** | Customer ordering patterns | Order frequency, recency |
+| **Customer_LTV2.py** | Customer lifetime value | CLV calculation, segmentation |
+| **Customer_OTIF_Discrepancy.py** | Customer-level OTIF gaps | Performance variations by customer |
+
+#### 📦 Product Analytics
+| Script | Purpose | Key Metrics |
+|--------|---------|-------------|
+| **Product_Performance.py** | Product-level performance | Revenue, OTIF, shortfall by SKU |
+| **Category_Summary.py** | Category-level aggregation | Category performance comparison |
+
+### How Scripts Are Used
+
+1. **Quadratic Integration**: Scripts run directly in Quadratic cells using Python engine
+2. **Real-Time Execution**: Connect to PostgreSQL on-demand for live data
+3. **Dashboard Generation**: Output feeds directly into dashboard visualizations
+4. **Modular Design**: Each script focuses on specific analytics domain
+
+
 ## 📚 Additional Documentation
 
 - **[Architecture Documentation](documents/architecture.md)**: Detailed system design and data flow
@@ -373,13 +448,16 @@ The PostgreSQL database implements a star schema with:
 - **Workflow Automation**: n8n pipeline design with scheduling and error handling
 - **Database Design**: PostgreSQL schema modeling for analytics workloads
 - **SQL Analytics**: Complex aggregations, window functions, and KPI calculations
-- **Data Visualization**: Executive-ready dashboard design in Quadratic
+- **Python Programming**: Custom analytics scripts using pandas, psycopg2, and numpy
+- **Data Engineering**: ETL pipeline development and data quality management
+- **Data Visualization**: Executive-ready dashboard design in Quadratic with Python integration
 
 ### Business Skills
 - **KPI Definition**: Translated business requirements into measurable metrics
 - **Stakeholder Communication**: Executive-level insights from operational data
 - **Strategic Planning**: 90-day improvement roadmap aligned with expansion goals
 - **Problem Solving**: Root cause analysis of operational inefficiencies
+```
 
 ---
 
