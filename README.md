@@ -126,7 +126,10 @@ FROM fact_orders;
 ### Executive Dashboard
 Strategic overview for COO-level decision making with monthly trends and category breakdowns.
 
-![Executive Dashboard](dashboards/Executive dashboard.png)
+
+**Screenshot:** 
+
+<img src="dashboards/Executive dashboard.png" width="900">
 
 **Key Features:**
 - Monthly OTIF and revenue trends
@@ -139,7 +142,9 @@ Strategic overview for COO-level decision making with monthly trends and categor
 ### Supply Chain Dashboard
 Operational metrics for logistics and fulfillment teams.
 
-![Supply Chain Dashboard](dashboards/supplychain dashboard.png)
+**Screenshot:**
+
+<img src="dashboards/supplychain dashboard.png" width="900">
 
 **Key Features:**
 - Daily delivery metrics and delay analysis
@@ -152,7 +157,9 @@ Operational metrics for logistics and fulfillment teams.
 ### Product Dashboard
 Product-level performance and revenue analysis.
 
-![Product Dashboard](dashboards/product dashboard.png)
+**Screenshot:** 
+
+<img src="dashboards/product dashboard.png" width="900">
 
 **Key Features:**
 - Top 10 products by revenue
@@ -165,7 +172,9 @@ Product-level performance and revenue analysis.
 ### Operations Dashboard
 Daily operational insights and activity patterns.
 
-![Operations Dashboard](dashboards/Operations Dashboard.png)
+**Screenshot:** 
+
+<img src="dashboards/Operations Dashboard.png" width="900">
 
 **Key Features:**
 - Daily order volume and revenue trends
@@ -178,7 +187,9 @@ Daily operational insights and activity patterns.
 ### Finance Dashboard
 Revenue analysis and customer lifetime value metrics.
 
-![Finance Dashboard](dashboards/finance dashboard.png)
+**Screenshot:**
+
+<img src="dashboards/finance dashboard.png" width="900">
 
 **Key Features:**
 - Monthly revenue trends by category
@@ -324,7 +335,6 @@ The PostgreSQL database implements a star schema with:
 
 - **[Architecture Documentation](documents/architecture.md)**: Detailed system design and data flow
 - **[KPI Methodology](documents/kpi_methodology.md)**: Complete calculation logic for all metrics
-- **[Data Dictionary](documents/Date Table - Data Dictionary.csv)**: Field definitions and business rules
 
 ---
 
